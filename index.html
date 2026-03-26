@@ -17,9 +17,6 @@
       --leaf1:#3f9d67;
       --leaf2:#62b37d;
       --leaf3:#2d7d52;
-      --dog1:#8a5a3d;
-      --dog2:#71452e;
-      --dog3:#4e2e20;
       --shadow: rgba(88, 26, 58, 0.18);
     }
 
@@ -43,7 +40,7 @@
       justify-content:space-between;
       align-items:center;
       position:relative;
-      padding:26px 14px 18px;
+      padding:22px 14px 18px;
     }
 
     .sparkles{
@@ -77,11 +74,11 @@
     }
 
     .message{
-      margin-top:8px;
+      margin-top:4px;
       text-align:center;
       z-index:2;
-      max-width:720px;
-      padding:12px 16px;
+      max-width:760px;
+      padding:14px 16px 16px;
       background:rgba(255,255,255,.42);
       backdrop-filter: blur(6px);
       border:1px solid rgba(255,255,255,.55);
@@ -103,6 +100,28 @@
       font-size:clamp(1rem, 3.7vw, 1.35rem);
       color:#813256;
     }
+
+    .music-row{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .music-btn{
+      appearance:none;
+      border:none;
+      border-radius:999px;
+      padding:12px 18px;
+      text-decoration:none;
+      font-size:0.98rem;
+      font-weight:bold;
+      color:white;
+      background:linear-gradient(180deg, #ff6ca5, #d93b80);
+      box-shadow:0 10px 22px rgba(166,31,98,.24);
+    }
+
 
     .scene{
       width:min(100%, 950px);
@@ -224,7 +243,6 @@
       transform-origin:bottom center;
     }
 
-    /* silhouette closer to a real tulip cup */
     .petal.outer-left{
       left:14px;
       top:28px;
@@ -410,83 +428,33 @@
     <div class="message">
       <h1>Vale, vamosss tú puedes 💗</h1>
       <p>Tulipanes rosas para recordarte que eres increíble, fuerte y muy capaz.</p>
+
+      <div class="music-row">
+        <a class="music-btn" href="https://www.youtube.com/watch?v=btPJPFnesV4" target="_blank" rel="noopener noreferrer">motivación 🤫🦅</a>
+      </div>
     </div>
 
     <div class="scene">
       <div class="flowers">
         <div class="tulip" style="--scale:1.1;">
-          <div class="bloom">
-            <div class="petal outer-left"></div>
-            <div class="petal outer-right"></div>
-            <div class="petal center-left"></div>
-            <div class="petal center-right"></div>
-            <div class="petal front"></div>
-            <div class="cup-shadow"></div>
-            <div class="bud"></div>
-          </div>
-          <div class="stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
+          <div class="bloom"><div class="petal outer-left"></div><div class="petal outer-right"></div><div class="petal center-left"></div><div class="petal center-right"></div><div class="petal front"></div><div class="cup-shadow"></div><div class="bud"></div></div>
+          <div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
         </div>
-
         <div class="tulip" style="--scale:.92;">
-          <div class="bloom">
-            <div class="petal outer-left"></div>
-            <div class="petal outer-right"></div>
-            <div class="petal center-left"></div>
-            <div class="petal center-right"></div>
-            <div class="petal front"></div>
-            <div class="cup-shadow"></div>
-            <div class="bud"></div>
-          </div>
-          <div class="stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
+          <div class="bloom"><div class="petal outer-left"></div><div class="petal outer-right"></div><div class="petal center-left"></div><div class="petal center-right"></div><div class="petal front"></div><div class="cup-shadow"></div><div class="bud"></div></div>
+          <div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
         </div>
-
         <div class="tulip" style="--scale:1.18;">
-          <div class="bloom">
-            <div class="petal outer-left"></div>
-            <div class="petal outer-right"></div>
-            <div class="petal center-left"></div>
-            <div class="petal center-right"></div>
-            <div class="petal front"></div>
-            <div class="cup-shadow"></div>
-            <div class="bud"></div>
-          </div>
-          <div class="stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
+          <div class="bloom"><div class="petal outer-left"></div><div class="petal outer-right"></div><div class="petal center-left"></div><div class="petal center-right"></div><div class="petal front"></div><div class="cup-shadow"></div><div class="bud"></div></div>
+          <div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
         </div>
-
         <div class="tulip" style="--scale:.98;">
-          <div class="bloom">
-            <div class="petal outer-left"></div>
-            <div class="petal outer-right"></div>
-            <div class="petal center-left"></div>
-            <div class="petal center-right"></div>
-            <div class="petal front"></div>
-            <div class="cup-shadow"></div>
-            <div class="bud"></div>
-          </div>
-          <div class="stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
+          <div class="bloom"><div class="petal outer-left"></div><div class="petal outer-right"></div><div class="petal center-left"></div><div class="petal center-right"></div><div class="petal front"></div><div class="cup-shadow"></div><div class="bud"></div></div>
+          <div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
         </div>
-
         <div class="tulip" style="--scale:1.06;">
-          <div class="bloom">
-            <div class="petal outer-left"></div>
-            <div class="petal outer-right"></div>
-            <div class="petal center-left"></div>
-            <div class="petal center-right"></div>
-            <div class="petal front"></div>
-            <div class="cup-shadow"></div>
-            <div class="bud"></div>
-          </div>
-          <div class="stem"></div>
-          <div class="leaf left"></div>
-          <div class="leaf right"></div>
+          <div class="bloom"><div class="petal outer-left"></div><div class="petal outer-right"></div><div class="petal center-left"></div><div class="petal center-right"></div><div class="petal front"></div><div class="cup-shadow"></div><div class="bud"></div></div>
+          <div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
         </div>
       </div>
 
@@ -527,7 +495,6 @@
 
   <script>
     const hearts = document.getElementById('hearts');
-
     function createHeart(x, y){
       const heart = document.createElement('div');
       heart.className = 'heart';
@@ -538,27 +505,21 @@
       hearts.appendChild(heart);
       setTimeout(() => heart.remove(), 3200);
     }
-
     document.addEventListener('click', (e) => {
       for(let i=0;i<10;i++){
-        setTimeout(() => {
-          createHeart(
-            e.clientX + (Math.random()*80 - 40),
-            e.clientY + (Math.random()*50 - 20)
-          );
-        }, i*90);
+        setTimeout(() => createHeart(
+          e.clientX + (Math.random()*80 - 40),
+          e.clientY + (Math.random()*50 - 20)
+        ), i*90);
       }
     });
-
     document.addEventListener('touchstart', (e) => {
       const t = e.touches[0];
       for(let i=0;i<10;i++){
-        setTimeout(() => {
-          createHeart(
-            t.clientX + (Math.random()*80 - 40),
-            t.clientY + (Math.random()*50 - 20)
-          );
-        }, i*90);
+        setTimeout(() => createHeart(
+          t.clientX + (Math.random()*80 - 40),
+          t.clientY + (Math.random()*50 - 20)
+        ), i*90);
       }
     }, {passive:true});
   </script>
