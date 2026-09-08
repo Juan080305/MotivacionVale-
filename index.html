@@ -3,17 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vale, vamosss tú puedes</title>
+  <title>Feliz cumpleaños, Valen 💗</title>
+
+  <!-- Vista previa al compartir el link (WhatsApp, Instagram, etc.) -->
+  <meta name="description" content="Chawu tiene algo que decirte 🐾" />
+  <meta name="theme-color" content="#ffdfee" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Para Valen" />
+  <meta property="og:locale" content="es_CR" />
+  <meta property="og:url" content="https://juan080305.github.io/MotivacionVale-/" />
+  <meta property="og:title" content="Feliz cumpleaños, Valen 💗" />
+  <meta property="og:description" content="Chawu tiene algo que decirte 🐾" />
+  <meta property="og:image" content="https://juan080305.github.io/MotivacionVale-/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Feliz cumpleaños, Valen" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Feliz cumpleaños, Valen 💗" />
+  <meta name="twitter:description" content="Chawu tiene algo que decirte 🐾" />
+  <meta name="twitter:image" content="https://juan080305.github.io/MotivacionVale-/preview.png" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%82%3C/text%3E%3C/svg%3E" />
   <style>
     :root{
-      --bg1:#fff4fb;
-      --bg2:#ffdcea;
-      --bg3:#ffeef5;
-      --pink1:#ff5d99;
-      --pink2:#ff8ebb;
-      --pink3:#ffd2e3;
-      --pink4:#eb3e82;
-      --pink5:#ffb1cf;
+      --bg1:#fff6fb;
+      --bg2:#ffdfee;
+      --bg3:#fff0f6;
       --leaf1:#3f9d67;
       --leaf2:#62b37d;
       --leaf3:#2d7d52;
@@ -35,21 +49,16 @@
 
     .wrap{
       min-height:100vh;
+      min-height:100dvh;
       display:flex;
       flex-direction:column;
-      justify-content:space-between;
       align-items:center;
       position:relative;
-      padding:22px 14px 18px;
+      padding:18px 12px 14px;
+      gap:14px;
     }
 
-    .sparkles{
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      overflow:hidden;
-    }
-
+    .sparkles{position:absolute; inset:0; pointer-events:none; overflow:hidden;}
     .sparkles span{
       position:absolute;
       width:10px;height:10px;
@@ -59,14 +68,12 @@
       animation: float 7s linear infinite;
       opacity:.9;
     }
-
     .sparkles span:nth-child(1){left:8%; top:15%; animation-delay:0s;}
     .sparkles span:nth-child(2){left:20%; top:72%; width:7px;height:7px; animation-delay:1s;}
     .sparkles span:nth-child(3){left:84%; top:22%; width:8px;height:8px; animation-delay:2s;}
     .sparkles span:nth-child(4){left:71%; top:65%; width:6px;height:6px; animation-delay:3s;}
     .sparkles span:nth-child(5){left:50%; top:10%; width:9px;height:9px; animation-delay:4s;}
     .sparkles span:nth-child(6){left:38%; top:52%; width:6px;height:6px; animation-delay:5s;}
-
     @keyframes float{
       0%{transform:translateY(0) scale(.8); opacity:.2;}
       50%{opacity:1;}
@@ -74,44 +81,43 @@
     }
 
     .message{
-      margin-top:4px;
+      flex:0 0 auto;
       text-align:center;
-      z-index:2;
-      max-width:760px;
-      padding:14px 16px 16px;
-      background:rgba(255,255,255,.42);
+      z-index:7;
+      width:min(600px, 100%);
+      padding:15px 20px 16px;
+      background:rgba(255,255,255,.52);
       backdrop-filter: blur(6px);
-      border:1px solid rgba(255,255,255,.55);
+      border:1px solid rgba(255,255,255,.6);
       border-radius:26px;
       box-shadow:0 14px 38px var(--shadow);
     }
-
     .message h1{
       margin:0;
-      font-size:clamp(2rem, 6vw, 4rem);
-      line-height:1.05;
+      font-size:clamp(1.5rem, 5vw, 2.6rem);
+      line-height:1.08;
       color:#a61f62;
       text-shadow: 0 2px 0 rgba(255,255,255,.7);
       letter-spacing:.5px;
     }
-
-    .message p{
-      margin:10px 0 0;
-      font-size:clamp(1rem, 3.7vw, 1.35rem);
+    .lead{
+      margin:8px 0 0;
+      font-size:clamp(.92rem, 2.8vw, 1.05rem);
       color:#813256;
     }
-
-    .music-row{
-      margin-top:14px;
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      flex-wrap:wrap;
+    .kicker{
+      margin:11px 0 0;
+      font-style:italic;
+      color:#9a4b71;
+      font-size:clamp(.86rem, 2.7vw, .96rem);
     }
 
+    .music-row{margin-top:14px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;}
     .music-btn{
       appearance:none;
       border:none;
+      cursor:pointer;
+      font-family:inherit;
       border-radius:999px;
       padding:12px 18px;
       text-decoration:none;
@@ -120,23 +126,42 @@
       color:white;
       background:linear-gradient(180deg, #ff6ca5, #d93b80);
       box-shadow:0 10px 22px rgba(166,31,98,.24);
+      transition:transform .12s ease, box-shadow .12s ease;
+    }
+    .music-btn:hover{transform:translateY(-2px); box-shadow:0 14px 26px rgba(166,31,98,.3);}
+    .music-btn:active{transform:translateY(1px) scale(.98);}
+    .music-btn.ghost{
+      color:#b3306e;
+      background:rgba(255,255,255,.82);
+      border:2px solid rgba(217,59,128,.35);
+      box-shadow:0 8px 18px rgba(166,31,98,.14);
     }
 
+    .cloudzone{
+      flex:0 0 auto;
+      position:relative;
+      z-index:6;
+      width:100%;
+      display:flex;
+      justify-content:center;
+      padding-bottom:22px;
+    }
 
     .scene{
       width:min(100%, 950px);
-      flex:1;
+      flex:1 1 auto;
+      min-height:230px;
       display:flex;
       align-items:flex-end;
       justify-content:center;
       position:relative;
-      padding-bottom:8px;
+      z-index:1;
     }
 
     .ground{
       position:absolute;
       left:0; right:0; bottom:0;
-      height:22%;
+      height:82px;
       background:
         radial-gradient(circle at 20% 35%, rgba(255,255,255,.13), transparent 14%),
         radial-gradient(circle at 62% 30%, rgba(255,255,255,.08), transparent 11%),
@@ -148,31 +173,40 @@
     .flowers{
       position:relative;
       width:100%;
-      height:min(75vh, 760px);
+      height:min(40vh, 360px);
       display:flex;
       align-items:flex-end;
       justify-content:center;
-      gap:1.1vw;
-      padding:0 4vw 10vh;
+      gap:1.2vw;
+      padding:0 4vw 56px;
       z-index:2;
     }
 
-    .tulip{
+    /* ---------------- LIRIOS ---------------- */
+    .lily{
       --scale:1;
+      --p1:#fff4f9; --p2:#ff9ec4; --p3:#ff5d99; --p4:#d92f74;
+      --throat:#ffe9a8; --speck: rgba(190, 26, 90, .5);
       position:relative;
-      width:100px;
-      height:450px;
+      width:92px;
+      height:340px;
       transform-origin:bottom center;
       animation:sway 5.4s ease-in-out infinite;
       filter: drop-shadow(0 18px 18px rgba(0,0,0,.12));
       transform:scale(var(--scale));
     }
-
-    .tulip:nth-child(2){animation-delay:.6s}
-    .tulip:nth-child(3){animation-delay:1.4s}
-    .tulip:nth-child(4){animation-delay:2.1s}
-    .tulip:nth-child(5){animation-delay:2.7s}
-
+    .lily.amarillo{
+      --p1:#fffdf0; --p2:#ffe08a; --p3:#ffc23d; --p4:#e89a12;
+      --throat:#fff2c2; --speck: rgba(158, 96, 8, .45);
+    }
+    .lily.blanco{
+      --p1:#ffffff; --p2:#fff7fb; --p3:#ffe4f0; --p4:#f3c3d8;
+      --throat:#e8f6c8; --speck: rgba(196, 132, 165, .38);
+    }
+    .lily:nth-child(2){animation-delay:.6s}
+    .lily:nth-child(3){animation-delay:1.4s}
+    .lily:nth-child(4){animation-delay:2.1s}
+    .lily:nth-child(5){animation-delay:2.7s}
     @keyframes sway{
       0%,100%{ transform: translateY(0) rotate(-2deg) scale(var(--scale));}
       50%{ transform: translateY(-4px) rotate(2deg) scale(var(--scale));}
@@ -180,227 +214,253 @@
 
     .stem{
       position:absolute;
-      bottom:38px;
+      bottom:26px;
       left:50%;
-      width:14px;
-      height:260px;
+      width:9px;
+      height:205px;
       transform:translateX(-50%);
-      background:linear-gradient(180deg, #7fd396, var(--leaf1) 45%, var(--leaf3));
+      background:linear-gradient(180deg, #5cb87d, var(--leaf1) 40%, var(--leaf3));
       border-radius:12px;
       box-shadow: inset -2px 0 3px rgba(255,255,255,.35), inset 3px 0 4px rgba(0,0,0,.08);
     }
 
     .leaf{
       position:absolute;
-      bottom:110px;
-      width:86px;
-      height:145px;
-      background:linear-gradient(180deg, var(--leaf2), var(--leaf3));
+      width:78px;
+      height:19px;
+      background:linear-gradient(90deg, var(--leaf3), var(--leaf2));
+      border-radius:100% 0 100% 0;
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.14);
     }
-
-    .leaf.left{
-      left:4px;
-      border-radius:0 100% 0 100%;
-      transform:rotate(-28deg) skewY(-5deg);
-    }
-
-    .leaf.right{
-      right:0px;
-      bottom:135px;
-      border-radius:100% 0 100% 0;
-      transform:rotate(31deg) skewY(5deg);
-    }
-
     .leaf:after{
       content:"";
       position:absolute;
-      left:48%;
-      top:8px;
-      width:2px;
-      height:120px;
-      background:rgba(255,255,255,.25);
-      transform:translateX(-50%) rotate(8deg);
+      left:10%; top:50%;
+      width:76%; height:2px;
+      background:rgba(255,255,255,.28);
+      transform:translateY(-50%) rotate(-3deg);
       border-radius:2px;
     }
+    .leaf.l1{ right:42px; bottom:150px; transform:rotate(19deg); transform-origin:right center;}
+    .leaf.l2{ left:42px;  bottom:112px; transform:rotate(-19deg) scaleX(-1); transform-origin:left center;}
+    .leaf.l3{ right:42px; bottom:72px; width:66px; height:17px; transform:rotate(16deg); transform-origin:right center;}
 
     .bloom{
       position:absolute;
-      left:50%;
-      top:18px;
-      width:132px;
-      height:138px;
+      left:50%; top:2px;
+      width:150px; height:150px;
       transform:translateX(-50%);
     }
-
     .petal{
       position:absolute;
-      box-shadow:
-        inset 0 -9px 12px rgba(255,255,255,.18),
-        inset 0 10px 14px rgba(255,255,255,.18),
-        0 4px 10px rgba(158, 39, 97, .12);
-      border:1px solid rgba(162, 28, 92, .14);
-      transform-origin:bottom center;
+      left:50%; top:50%;
+      width:36px; height:74px;
+      margin-left:-18px; margin-top:-74px;
+      transform-origin:50% 100%;
+      background:
+        radial-gradient(ellipse 60% 40% at 50% 92%, var(--throat) 0%, rgba(255,255,255,0) 62%),
+        linear-gradient(180deg, var(--p4) 0%, var(--p3) 26%, var(--p2) 62%, var(--p1) 100%);
+      clip-path: polygon(50% 0%, 63% 9%, 74% 26%, 78% 48%, 72% 72%, 58% 92%, 50% 100%, 42% 92%, 28% 72%, 22% 48%, 26% 26%, 37% 9%);
+      box-shadow: 0 4px 10px rgba(158, 39, 97, .1);
     }
-
-    .petal.outer-left{
-      left:14px;
-      top:28px;
-      width:46px;
-      height:92px;
-      background:linear-gradient(180deg, #ffd7e6 0%, var(--pink2) 50%, var(--pink4) 100%);
-      border-radius:58% 42% 55% 50% / 20% 22% 78% 80%;
-      clip-path:polygon(50% 0%, 68% 8%, 80% 24%, 82% 44%, 74% 76%, 58% 100%, 38% 100%, 20% 74%, 16% 44%, 24% 22%, 36% 8%);
-      transform:rotate(-18deg);
-      z-index:2;
-    }
-
-    .petal.outer-right{
-      right:14px;
-      top:28px;
-      width:46px;
-      height:92px;
-      background:linear-gradient(180deg, #ffd7e6 0%, var(--pink2) 50%, var(--pink4) 100%);
-      border-radius:42% 58% 50% 55% / 22% 20% 80% 78%;
-      clip-path:polygon(50% 0%, 64% 8%, 76% 22%, 84% 44%, 80% 74%, 62% 100%, 42% 100%, 26% 76%, 18% 44%, 20% 24%, 32% 8%);
-      transform:rotate(18deg);
-      z-index:2;
-    }
-
-    .petal.center-left{
-      left:30px;
-      top:12px;
-      width:40px;
-      height:108px;
-      background:linear-gradient(180deg, #fff0f6 0%, var(--pink5) 40%, var(--pink1) 76%, var(--pink4) 100%);
-      border-radius:50% 50% 46% 46% / 16% 16% 84% 84%;
-      clip-path:polygon(50% 0%, 62% 10%, 72% 30%, 74% 54%, 68% 82%, 56% 100%, 44% 100%, 32% 82%, 26% 54%, 28% 30%, 38% 10%);
-      transform:rotate(-8deg);
-      z-index:4;
-    }
-
-    .petal.center-right{
-      right:30px;
-      top:12px;
-      width:40px;
-      height:108px;
-      background:linear-gradient(180deg, #fff0f6 0%, var(--pink5) 40%, var(--pink1) 76%, var(--pink4) 100%);
-      border-radius:50% 50% 46% 46% / 16% 16% 84% 84%;
-      clip-path:polygon(50% 0%, 62% 10%, 72% 30%, 74% 54%, 68% 82%, 56% 100%, 44% 100%, 32% 82%, 26% 54%, 28% 30%, 38% 10%);
-      transform:rotate(8deg);
-      z-index:4;
-    }
-
-    .petal.front{
-      left:50%;
-      top:26px;
-      width:58px;
-      height:102px;
-      transform:translateX(-50%);
-      background:linear-gradient(180deg, #ffe9f2 0%, var(--pink3) 38%, var(--pink1) 75%, var(--pink4) 100%);
-      border-radius:50% 50% 44% 44% / 18% 18% 82% 82%;
-      clip-path:polygon(50% 0%, 68% 10%, 82% 28%, 86% 52%, 78% 78%, 62% 100%, 38% 100%, 22% 78%, 14% 52%, 18% 28%, 32% 10%);
-      z-index:5;
-    }
-
-    .petal::after{
+    .petal:before{
       content:"";
       position:absolute;
-      left:50%;
-      top:10px;
-      width:2px;
-      height:66%;
-      transform:translateX(-50%);
-      background:rgba(255,255,255,.34);
-      border-radius:4px;
-      filter:blur(.4px);
+      inset:0;
+      background-image:
+        radial-gradient(circle, var(--speck) 45%, transparent 46%),
+        radial-gradient(circle, var(--speck) 45%, transparent 46%),
+        radial-gradient(circle, var(--speck) 45%, transparent 46%),
+        radial-gradient(circle, var(--speck) 45%, transparent 46%),
+        radial-gradient(circle, var(--speck) 45%, transparent 46%),
+        radial-gradient(circle, var(--speck) 45%, transparent 46%);
+      background-size:5px 5px;
+      background-repeat:no-repeat;
+      background-position: 42% 62%, 58% 70%, 46% 78%, 60% 84%, 38% 86%, 52% 90%;
+      opacity:.85;
     }
-
-    .cup-shadow{
+    .petal:after{
+      content:"";
       position:absolute;
-      left:50%;
-      top:70px;
-      width:80px;
-      height:32px;
+      left:50%; top:8%;
+      width:2px; height:80%;
       transform:translateX(-50%);
-      background:radial-gradient(circle at 50% 0%, rgba(122,16,64,.28), rgba(122,16,64,0) 70%);
-      z-index:3;
-      filter:blur(3px);
+      background:linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.12));
+      border-radius:4px;
     }
+    .petal.o1{transform:rotate(0deg);   z-index:2}
+    .petal.o2{transform:rotate(120deg); z-index:2}
+    .petal.o3{transform:rotate(240deg); z-index:2}
+    .petal.i1{transform:rotate(60deg);  z-index:3; width:40px; margin-left:-20px;}
+    .petal.i2{transform:rotate(180deg); z-index:3; width:40px; margin-left:-20px;}
+    .petal.i3{transform:rotate(300deg); z-index:3; width:40px; margin-left:-20px;}
 
+    .heart-center{
+      position:absolute;
+      left:50%; top:50%;
+      width:34px;height:34px;
+      transform:translate(-50%,-50%);
+      border-radius:50%;
+      background:radial-gradient(circle at 50% 45%, var(--throat) 0%, rgba(255,255,255,0) 70%);
+      z-index:4;
+    }
+    .stamen{
+      position:absolute;
+      left:50%; top:50%;
+      width:2.6px; height:38px;
+      margin-left:-1.3px; margin-top:-38px;
+      transform-origin:50% 100%;
+      background:linear-gradient(180deg, #d8c274, #a8c46a);
+      border-radius:3px;
+      z-index:5;
+    }
+    .stamen:after{
+      content:"";
+      position:absolute;
+      top:-7px; left:50%;
+      width:12px; height:7px;
+      transform:translateX(-50%) rotate(-16deg);
+      background:linear-gradient(180deg,#d1703a,#9c4519);
+      border-radius:50%;
+      box-shadow:0 1px 2px rgba(0,0,0,.18);
+    }
+    .stamen.a1{transform:rotate(18deg)}
+    .stamen.a2{transform:rotate(78deg)}
+    .stamen.a3{transform:rotate(138deg)}
+    .stamen.a4{transform:rotate(198deg)}
+    .stamen.a5{transform:rotate(258deg)}
+    .stamen.a6{transform:rotate(318deg)}
+    .pistil{
+      position:absolute;
+      left:50%; top:50%;
+      width:3.4px;height:46px;
+      margin-left:-1.7px; margin-top:-46px;
+      transform-origin:50% 100%;
+      background:linear-gradient(180deg,#8fbf63,#c9d98a);
+      border-radius:4px;
+      z-index:6;
+    }
+    .pistil:after{
+      content:"";
+      position:absolute;
+      top:-5px; left:50%;
+      width:9px;height:8px;
+      transform:translateX(-50%);
+      background:#7fae52;
+      border-radius:50%;
+    }
     .bud{
       position:absolute;
-      left:50%;
-      top:112px;
-      width:28px;height:20px;
+      left:50%; top:118px;
+      width:22px;height:19px;
       transform:translateX(-50%);
       background:linear-gradient(180deg, #6ec08c, #3f9d67);
-      clip-path:polygon(10% 100%, 90% 100%, 72% 0%, 28% 0%);
+      clip-path:polygon(12% 100%, 88% 100%, 70% 0%, 30% 0%);
       border-radius:0 0 8px 8px;
       z-index:1;
     }
 
-    .dog{
+    /* ---------------- CHAWU ---------------- */
+    .dog-wrap{
       position:absolute;
       right:4vw;
-      bottom:6vh;
-      width:min(300px, 44vw);
-      height:min(210px, 28vw);
+      bottom:50px;
+      width:min(252px, 40vw);
       z-index:3;
+    }
+    .dog{
+      display:block;
+      width:100%;
+      height:auto;
       animation: dogbob 3.8s ease-in-out infinite;
       filter: drop-shadow(0 14px 16px rgba(0,0,0,.16));
+      transform-origin:50% 100%;
     }
-
     @keyframes dogbob{
       0%,100%{transform:translateY(0)}
       50%{transform:translateY(-5px)}
     }
-
-
-    .thought{
-      position:absolute;
-      right:18vw;
-      bottom:24vh;
-      z-index:6;
-      max-width:min(220px, 38vw);
-      background:rgba(255,255,255,.96);
-      color:#7b4a32;
-      border:2px solid rgba(123,74,50,.16);
-      border-radius:28px;
-      padding:12px 16px;
-      box-shadow:0 10px 24px rgba(0,0,0,.12);
-      font-size:clamp(.95rem, 2.8vw, 1.15rem);
-      font-weight:bold;
-      text-align:center;
+    .dog-wrap.barking .dog{ animation: bark .55s ease; }
+    @keyframes bark{
+      0%{transform:translateY(0) rotate(0) scale(1)}
+      25%{transform:translateY(-12px) rotate(-4deg) scale(1.05)}
+      55%{transform:translateY(3px) rotate(3deg) scale(.97)}
+      80%{transform:translateY(-4px) rotate(-1deg) scale(1.01)}
+      100%{transform:translateY(0) rotate(0) scale(1)}
     }
 
+    .woof{
+      position:absolute;
+      left:2%;
+      top:26%;
+      transform:translateX(-100%) scale(.5);
+      opacity:0;
+      font-weight:bold;
+      font-size:clamp(1.05rem, 3.2vw, 1.5rem);
+      color:#d93b80;
+      text-shadow:0 2px 0 #fff, 0 0 14px rgba(255,255,255,.9);
+      pointer-events:none;
+      white-space:nowrap;
+    }
+    .dog-wrap.barking .woof{ animation: woofpop .8s ease; }
+    @keyframes woofpop{
+      0%{opacity:0; transform:translateX(-92%) scale(.5)}
+      25%{opacity:1; transform:translateX(-102%) scale(1.18)}
+      60%{opacity:1; transform:translateX(-110%) scale(1)}
+      100%{opacity:0; transform:translateX(-124%) translateY(-18px) scale(.95)}
+    }
+
+    /* ---------------- NUBECITA ---------------- */
+    .thought{
+      position:relative;
+      width:min(440px, 100%);
+      min-height:148px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      background:rgba(255,255,255,.97);
+      color:#7b4a32;
+      border:2px solid rgba(123,74,50,.16);
+      border-radius:30px;
+      padding:16px 20px;
+      box-shadow:0 12px 28px rgba(0,0,0,.14);
+      font-size:clamp(1rem, 2.9vw, 1.18rem);
+      line-height:1.45;
+      font-weight:bold;
+      text-align:center;
+      transform-origin:78% 120%;
+    }
     .thought:before,
     .thought:after{
       content:"";
       position:absolute;
-      background:rgba(255,255,255,.96);
+      background:rgba(255,255,255,.97);
       border:2px solid rgba(123,74,50,.16);
       border-radius:50%;
     }
-
-    .thought:before{
-      width:20px;
-      height:20px;
-      right:26px;
-      bottom:-18px;
+    .thought:before{width:22px;height:22px;right:34px;bottom:-18px;}
+    .thought:after{width:13px;height:13px;right:14px;bottom:-34px;}
+    .thought.pop{ animation: pop .5s cubic-bezier(.2,1.5,.4,1); }
+    @keyframes pop{
+      0%{transform:scale(.55) translateY(14px); opacity:0}
+      60%{transform:scale(1.07) translateY(0); opacity:1}
+      100%{transform:scale(1); opacity:1}
     }
-
-    .thought:after{
-      width:12px;
-      height:12px;
-      right:10px;
-      bottom:-34px;
+    .thought .cue{
+      display:block;
+      margin-top:8px;
+      font-size:.78em;
+      font-weight:normal;
+      font-style:italic;
+      color:#a9805f;
     }
 
     .name-tag{
       position:absolute;
-      right:9%;
-      bottom:2.8vh;
+      left:50%;
+      bottom:-32px;
+      transform:translateX(-50%);
+      white-space:nowrap;
       z-index:4;
       background:rgba(255,255,255,.9);
       color:#7b4a32;
@@ -422,14 +482,7 @@
       z-index:5;
     }
 
-    .heart-burst{
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      overflow:hidden;
-      z-index:20;
-    }
-
+    .heart-burst{position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:20;}
     .heart{
       position:absolute;
       font-size:20px;
@@ -437,7 +490,6 @@
       opacity:.9;
       filter: drop-shadow(0 6px 8px rgba(0,0,0,.12));
     }
-
     @keyframes rise{
       0%{transform:translateY(0) scale(.6) rotate(0deg); opacity:0;}
       15%{opacity:1;}
@@ -445,24 +497,39 @@
     }
 
     @media (max-width: 720px){
+      .wrap{ padding:14px 10px 12px; gap:10px; }
+      .message{ padding:13px 14px 14px; border-radius:22px; }
+      .music-btn{ padding:11px 15px; font-size:.92rem; }
+      .cloudzone{ padding-bottom:20px; }
+      .thought{
+        width:100%;
+        min-height:132px;
+        padding:13px 15px;
+        border-radius:24px;
+        font-size:clamp(.98rem, 4vw, 1.1rem);
+      }
+      .scene{ min-height:210px; }
+      .ground{ height:64px; }
       .flowers{
-        gap:0.2vw;
-        padding:0 0 11vh;
+        gap:0;
+        height:min(34vh, 300px);
+        padding:0 0 44px;
         justify-content:space-evenly;
       }
-      .tulip{ --scale:.83; width:84px; }
-      .dog{
-        right:1vw;
-        width:45vw;
-        height:30vw;
-        bottom:7vh;
-      }
-      .thought{
-        right:20vw;
-        bottom:28vh;
-        max-width:42vw;
-        padding:10px 12px;
-      }
+      .lily{ --scale:.62; width:52px; }
+      .dog-wrap{ right:3vw; width:48vw; max-width:206px; bottom:42px; }
+      .name-tag{ bottom:-28px; padding:6px 13px; }
+      .tap{ font-size:.85rem; }
+    }
+
+    @media (max-width: 720px) and (max-height: 700px){
+      .flowers{ height:min(30vh, 230px); }
+      .thought{ min-height:118px; }
+      .scene{ min-height:180px; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .lily, .dog, .sparkles span{animation:none !important}
     }
   </style>
 </head>
@@ -473,105 +540,251 @@
     </div>
 
     <div class="message">
-      <h1>Vale, vamosss tú puedes 💗</h1>
-      <p>Tulipanes rosas para recordarte que eres increíble, fuerte y muy capaz.</p>
+      <h1>Feliz cumpleaños, Valen&nbsp;💗</h1>
+      <p class="lead">18 vueltas al sol 🎂 Chawu tiene algo que decirte: hazlo ladrar 🐾</p>
 
       <div class="music-row">
-        <a class="music-btn" href="https://open.spotify.com/track/2KH16WveTQWT6KOG9Rg6e2" target="_blank" rel="noopener noreferrer">motivación 🤫🦅</a>
+        <button class="music-btn" id="barkBtn" type="button">hacer ladrar a Chawu 🐾</button>
+        <a class="music-btn ghost" href="https://open.spotify.com/track/7tm3zLZSI0OnvFtomZwhHk" target="_blank" rel="noopener noreferrer">una canción especial 🎧</a>
+      </div>
+
+      <p class="kicker">Lirios rosados, amarillos y blancos. Las flores de siempre no te iban. 🤍</p>
+    </div>
+
+    <div class="cloudzone">
+      <div class="thought" id="speech" aria-live="polite">
+        <span id="speechText">hazme ladrar y te lo digo 🐾</span>
+        <span class="cue" id="speechCue">toca el botón rosado</span>
       </div>
     </div>
 
     <div class="scene">
       <div class="flowers">
-        <div class="tulip" style="--scale:1.1;">
-          <div class="bloom"><div class="petal outer-left"></div><div class="petal outer-right"></div><div class="petal center-left"></div><div class="petal center-right"></div><div class="petal front"></div><div class="cup-shadow"></div><div class="bud"></div></div>
-          <div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
+        <div class="lily rosa" style="--scale:1.06;">
+          <div class="bloom"><div class="petal o1"></div><div class="petal o2"></div><div class="petal o3"></div><div class="petal i1"></div><div class="petal i2"></div><div class="petal i3"></div><div class="heart-center"></div><div class="stamen a1"></div><div class="stamen a2"></div><div class="stamen a3"></div><div class="stamen a4"></div><div class="stamen a5"></div><div class="stamen a6"></div><div class="pistil"></div></div>
+          <div class="bud"></div>
+          <div class="stem"></div>
+          <div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div>
         </div>
-        <div class="tulip" style="--scale:.92;">
-          <div class="bloom"><div class="petal outer-left"></div><div class="petal outer-right"></div><div class="petal center-left"></div><div class="petal center-right"></div><div class="petal front"></div><div class="cup-shadow"></div><div class="bud"></div></div>
-          <div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
+        <div class="lily amarillo" style="--scale:.92;">
+          <div class="bloom"><div class="petal o1"></div><div class="petal o2"></div><div class="petal o3"></div><div class="petal i1"></div><div class="petal i2"></div><div class="petal i3"></div><div class="heart-center"></div><div class="stamen a1"></div><div class="stamen a2"></div><div class="stamen a3"></div><div class="stamen a4"></div><div class="stamen a5"></div><div class="stamen a6"></div><div class="pistil"></div></div>
+          <div class="bud"></div>
+          <div class="stem"></div>
+          <div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div>
         </div>
-        <div class="tulip" style="--scale:1.18;">
-          <div class="bloom"><div class="petal outer-left"></div><div class="petal outer-right"></div><div class="petal center-left"></div><div class="petal center-right"></div><div class="petal front"></div><div class="cup-shadow"></div><div class="bud"></div></div>
-          <div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
+        <div class="lily blanco" style="--scale:1.2;">
+          <div class="bloom"><div class="petal o1"></div><div class="petal o2"></div><div class="petal o3"></div><div class="petal i1"></div><div class="petal i2"></div><div class="petal i3"></div><div class="heart-center"></div><div class="stamen a1"></div><div class="stamen a2"></div><div class="stamen a3"></div><div class="stamen a4"></div><div class="stamen a5"></div><div class="stamen a6"></div><div class="pistil"></div></div>
+          <div class="bud"></div>
+          <div class="stem"></div>
+          <div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div>
         </div>
-        <div class="tulip" style="--scale:.98;">
-          <div class="bloom"><div class="petal outer-left"></div><div class="petal outer-right"></div><div class="petal center-left"></div><div class="petal center-right"></div><div class="petal front"></div><div class="cup-shadow"></div><div class="bud"></div></div>
-          <div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
+        <div class="lily amarillo" style="--scale:.98;">
+          <div class="bloom"><div class="petal o1"></div><div class="petal o2"></div><div class="petal o3"></div><div class="petal i1"></div><div class="petal i2"></div><div class="petal i3"></div><div class="heart-center"></div><div class="stamen a1"></div><div class="stamen a2"></div><div class="stamen a3"></div><div class="stamen a4"></div><div class="stamen a5"></div><div class="stamen a6"></div><div class="pistil"></div></div>
+          <div class="bud"></div>
+          <div class="stem"></div>
+          <div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div>
         </div>
-        <div class="tulip" style="--scale:1.06;">
-          <div class="bloom"><div class="petal outer-left"></div><div class="petal outer-right"></div><div class="petal center-left"></div><div class="petal center-right"></div><div class="petal front"></div><div class="cup-shadow"></div><div class="bud"></div></div>
-          <div class="stem"></div><div class="leaf left"></div><div class="leaf right"></div>
+        <div class="lily rosa" style="--scale:1.1;">
+          <div class="bloom"><div class="petal o1"></div><div class="petal o2"></div><div class="petal o3"></div><div class="petal i1"></div><div class="petal i2"></div><div class="petal i3"></div><div class="heart-center"></div><div class="stamen a1"></div><div class="stamen a2"></div><div class="stamen a3"></div><div class="stamen a4"></div><div class="stamen a5"></div><div class="stamen a6"></div><div class="pistil"></div></div>
+          <div class="bud"></div>
+          <div class="stem"></div>
+          <div class="leaf l1"></div><div class="leaf l2"></div><div class="leaf l3"></div>
         </div>
       </div>
 
-      <svg class="dog" viewBox="0 0 420 250" aria-label="Perro salchicha café llamado Sky">
-        <path d="M52 135 C25 118, 18 98, 25 82" fill="none" stroke="#6f4630" stroke-width="13" stroke-linecap="round"/>
-        <ellipse cx="190" cy="145" rx="120" ry="58" fill="#8a5a3d"/>
-        <ellipse cx="188" cy="151" rx="105" ry="42" fill="#9d6a49" opacity=".45"/>
-        <ellipse cx="250" cy="164" rx="32" ry="22" fill="#b27a56" opacity=".5"/>
-        <ellipse cx="286" cy="132" rx="30" ry="40" fill="#84553a"/>
-        <ellipse cx="334" cy="116" rx="58" ry="48" fill="#8a5a3d"/>
-        <ellipse cx="344" cy="124" rx="42" ry="30" fill="#9c6b49" opacity=".38"/>
-        <path d="M314 116 C297 126, 294 155, 313 176 C332 165, 342 138, 334 114" fill="#5d3726"/>
-        <ellipse cx="381" cy="126" rx="28" ry="21" fill="#9b6a48"/>
-        <ellipse cx="395" cy="130" rx="12" ry="8" fill="#3f2419"/>
-        <circle cx="346" cy="105" r="5.8" fill="#2f1a12"/>
-        <circle cx="347.8" cy="103.4" r="1.5" fill="#fff"/>
-        <path d="M394 132 Q387 140 377 142" stroke="#4e2e20" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-        <path d="M379 143 Q370 149 360 146" stroke="#4e2e20" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <rect x="272" y="142" width="34" height="12" rx="6" fill="#f1619b"/>
-        <circle cx="289" cy="154" r="6" fill="#ffd76c"/>
-        <rect x="112" y="182" width="18" height="46" rx="8" fill="#6f4630"/>
-        <rect x="175" y="185" width="18" height="43" rx="8" fill="#6f4630"/>
-        <rect x="248" y="184" width="18" height="44" rx="8" fill="#6f4630"/>
-        <rect x="305" y="177" width="18" height="50" rx="8" fill="#6f4630"/>
-        <ellipse cx="121" cy="229" rx="15" ry="8" fill="#4e2e20"/>
-        <ellipse cx="184" cy="229" rx="15" ry="8" fill="#4e2e20"/>
-        <ellipse cx="257" cy="229" rx="15" ry="8" fill="#4e2e20"/>
-        <ellipse cx="314" cy="229" rx="15" ry="8" fill="#4e2e20"/>
-      </svg>
+      <div class="dog-wrap" id="dogWrap">
+        <span class="woof">¡guau!</span>
+        <svg class="dog" viewBox="0 0 360 280" role="img" aria-label="Chawu, el chow chow negro">
+          <g transform="translate(360,0) scale(-1,1)">
+          <defs>
+            <linearGradient id="furA" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#443a4a"/><stop offset="55%" stop-color="#2f2833"/><stop offset="100%" stop-color="#201a25"/>
+            </linearGradient>
+            <linearGradient id="furB" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#564860"/><stop offset="58%" stop-color="#372f40"/><stop offset="100%" stop-color="#241e2a"/>
+            </linearGradient>
+            <linearGradient id="furC" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#4b3f55"/><stop offset="100%" stop-color="#2a2331"/>
+            </linearGradient>
+            <linearGradient id="rust" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#b47c4d"/><stop offset="100%" stop-color="#77462a"/>
+            </linearGradient>
+          </defs>
 
-      
-      <div class="thought">mami tú puedes 💕</div>
-      <div class="name-tag">Sky 🐶</div>
+          <!-- ===== COLA EN PLUMA, ENROSCADA SOBRE EL LOMO ===== -->
+          <g fill="#2c2532">
+            <circle cx="118" cy="166" r="17"/><circle cx="101" cy="149" r="18"/>
+            <circle cx="93" cy="128" r="18"/><circle cx="99" cy="110" r="17"/>
+            <circle cx="115" cy="100" r="16"/><circle cx="135" cy="99" r="15"/>
+            <circle cx="153" cy="106" r="14"/><circle cx="166" cy="118" r="12"/>
+          </g>
+          <path d="M118 164 Q92 150 94 126 Q97 106 120 102 Q146 99 164 118"
+                stroke="#4c4058" stroke-width="15" fill="none" stroke-linecap="round" opacity=".45"/>
+          <path d="M104 118 Q108 106 122 102" stroke="rgba(255,255,255,.16)" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M140 104 Q152 106 160 116" stroke="rgba(255,255,255,.12)" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+
+          <!-- ===== CUERPO COMPACTO ===== -->
+          <path d="M 217.4 194.9 Q 221.3 208.6 200.6 212.3 Q 195.6 225.9 174.4 223.8 Q 161.3 234.9 143.3 227.4 Q 124.4 234.0 112.6 222.4 Q 91.3 223.5 87.7 209.7 Q 67.6 205.1 72.9 191.6 Q 57.4 182.0 70.7 171.1 Q 62.6 158.2 81.6 151.8 Q 82.2 137.9 103.6 137.0 Q 112.8 124.5 132.9 129.3 Q 149.2 120.3 164.5 130.1 Q 185.0 126.1 192.8 139.1 Q 214.1 140.9 213.1 154.8 Q 231.4 162.1 221.8 174.6 Q 233.9 186.1 217.4 194.9 Z" fill="url(#furA)"/>
+          <!-- grupa alta y esponjada -->
+          <path d="M 137.2 171.9 Q 142.1 184.7 129.6 191.1 Q 127.2 204.4 113.0 204.0 Q 103.9 214.4 91.9 207.3 Q 78.6 212.0 71.8 200.0 Q 57.8 197.8 58.3 184.2 Q 47.4 175.6 54.8 164.1 Q 49.9 151.3 62.4 144.9 Q 64.8 131.6 79.0 132.0 Q 88.1 121.6 100.1 128.7 Q 113.4 124.0 120.2 136.0 Q 134.2 138.2 133.7 151.8 Q 144.6 160.4 137.2 171.9 Z" fill="url(#furC)"/>
+          <ellipse cx="140" cy="162" rx="52" ry="26" fill="#4d4159" opacity=".3"/>
+
+          <!-- ===== PATAS RECTAS (aplomo de chow) ===== -->
+          <rect x="92" y="196" width="33" height="54" rx="14" fill="#282130"/>
+          <ellipse cx="108" cy="246" rx="20" ry="10" fill="#1b1621"/>
+          <path d="M101 244 v-7 M108 244 v-8 M115 244 v-7" stroke="#463b51" stroke-width="2.4" stroke-linecap="round"/>
+          <rect x="186" y="194" width="32" height="56" rx="14" fill="#2a2330"/>
+          <rect x="232" y="192" width="32" height="58" rx="14" fill="#342c3c"/>
+          <ellipse cx="202" cy="246" rx="19" ry="10" fill="#1d1723"/>
+          <ellipse cx="248" cy="246" rx="19" ry="10" fill="#241d2b"/>
+          <path d="M195 244 v-7 M202 244 v-8 M209 244 v-7" stroke="#4a3f54" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M241 244 v-7 M248 244 v-8 M255 244 v-7" stroke="#584a67" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M196 214 q6 20 4 30" stroke="#8a5a38" stroke-width="7" fill="none" stroke-linecap="round" opacity=".35"/>
+          <path d="M246 212 q6 20 4 32" stroke="#8a5a38" stroke-width="7" fill="none" stroke-linecap="round" opacity=".3"/>
+
+          <!-- ===== PECHO PROFUNDO ===== -->
+          <path d="M 260.4 187.5 Q 264.6 199.1 251.5 203.7 Q 249.0 215.8 235.0 214.6 Q 226.3 224.2 214.6 217.5 Q 201.8 222.5 194.9 211.8 Q 180.9 211.1 180.6 198.8 Q 168.5 192.5 174.8 181.6 Q 167.5 171.1 178.9 163.9 Q 178.0 151.7 192.0 150.0 Q 197.7 138.8 211.0 142.9 Q 222.1 135.3 231.6 144.3 Q 245.5 142.1 249.1 153.9 Q 262.6 157.5 259.5 169.5 Q 269.5 178.1 260.4 187.5 Z" fill="url(#furB)"/>
+          <ellipse cx="216" cy="178" rx="32" ry="26" fill="#5b4c69" opacity=".26"/>
+
+          <!-- collar -->
+          <path d="M186 162 Q216 184 250 164" stroke="#f1619b" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <circle cx="218" cy="184" r="8.5" fill="#ffd76c"/>
+          <path d="M218 187.6 l-3.6-3.9 a2.4 2.4 0 0 1 3.6-3 a2.4 2.4 0 0 1 3.6 3 z" fill="#e0913a"/>
+
+          <!-- ===== MELENA DE LEON ===== -->
+          <path d="M 326.8 98.6 Q 340.6 110.0 326.8 121.3 Q 336.4 135.9 319.6 142.9 Q 324.2 159.5 305.9 161.7 Q 305.0 178.8 286.9 175.8 Q 280.6 191.9 264.2 184.1 Q 253.1 197.8 239.9 185.8 Q 225.0 195.8 216.2 180.8 Q 198.7 186.2 195.1 169.4 Q 176.7 169.9 178.5 152.8 Q 160.8 148.2 167.9 132.4 Q 152.5 123.2 164.3 110.0 Q 152.5 96.9 167.9 87.6 Q 160.8 71.8 178.5 67.2 Q 176.6 50.2 195.0 50.6 Q 198.7 33.8 216.1 39.3 Q 224.9 24.2 239.9 34.2 Q 253.0 22.2 264.1 35.9 Q 280.5 28.1 286.8 44.2 Q 305.0 41.2 305.9 58.3 Q 324.1 60.4 319.6 77.0 Q 336.4 84.0 326.8 98.6 Z" fill="url(#furB)"/>
+          <!-- mechones rojizos en la melena -->
+          <path d="M312 104 Q328 132 306 160 Q294 174 278 180 Q306 152 302 122 Z" fill="url(#rust)" opacity=".4"/>
+          <path d="M180 108 Q164 132 182 160 Q192 174 206 180 Q182 152 190 126 Z" fill="url(#rust)" opacity=".3"/>
+          <!-- direccion del pelo -->
+          <g stroke="#5d4e6b" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".55">
+            <path d="M196 78 q-8 12 -6 24"/><path d="M300 74 q8 12 6 24"/>
+            <path d="M186 130 q-8 12 -4 24"/><path d="M310 128 q8 12 4 24"/>
+            <path d="M212 172 q-4 10 0 16"/><path d="M284 170 q4 10 0 16"/>
+          </g>
+
+          <!-- ===== OREJAS PEQUENAS Y GRUESAS, INCLINADAS ADELANTE ===== -->
+          <path d="M196 62 Q188 26 220 30 Q230 44 226 68 Z" fill="#29222f"/>
+          <path d="M205 58 Q201 38 216 40 Q221 50 218 62 Z" fill="url(#rust)" opacity=".8"/>
+          <path d="M270 58 Q280 22 308 40 Q311 58 296 74 Z" fill="#29222f"/>
+          <path d="M280 56 Q287 38 300 48 Q301 60 292 70 Z" fill="url(#rust)" opacity=".75"/>
+
+          <!-- ===== CARA ANCHA Y ARRUGADA ===== -->
+          <ellipse cx="248" cy="112" rx="50" ry="44" fill="#2c2532"/>
+          <ellipse cx="248" cy="120" rx="42" ry="35" fill="#3b3243" opacity=".5"/>
+          <!-- arrugas de la frente -->
+          <g stroke="#171220" stroke-width="3" fill="none" stroke-linecap="round" opacity=".55">
+            <path d="M232 88 q16 -8 32 0"/>
+            <path d="M236 79 q12 -6 24 0"/>
+          </g>
+          <!-- cejas claras -->
+          <ellipse cx="226" cy="99" rx="10" ry="6" fill="#9a6742" opacity=".6" transform="rotate(-14 226 99)"/>
+          <ellipse cx="270" cy="97" rx="10" ry="6" fill="#9a6742" opacity=".55" transform="rotate(12 270 97)"/>
+          <!-- ojos almendrados y hundidos -->
+          <path d="M216 112 q9 -9 19 -1 q-9 9 -19 1 z" fill="#0e0b12"/>
+          <path d="M260 110 q10 -8 19 1 q-10 8 -19 -1 z" fill="#0e0b12"/>
+          <circle cx="225" cy="108.5" r="2.4" fill="#fff" opacity=".9"/>
+          <circle cx="270" cy="107" r="2.4" fill="#fff" opacity=".9"/>
+
+          <!-- hocico corto y ancho -->
+          <ellipse cx="248" cy="138" rx="28" ry="20" fill="#463b4d"/>
+          <ellipse cx="248" cy="144" rx="22" ry="13" fill="#3a3040" opacity=".7"/>
+          <path d="M248 133 m-12 -1 a12 8.5 0 0 1 24 0 a12 9.5 0 0 1 -12 9 a12 9.5 0 0 1 -12 -9 z" fill="#100c15"/>
+          <path d="M243 129 q5 -3.5 10 0" stroke="#4e4359" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M248 142 v5" stroke="#171220" stroke-width="2.6" stroke-linecap="round"/>
+          <!-- boca de chow (gesto serio) -->
+          <path d="M248 147 q-10 8 -18 1" stroke="#171220" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M248 147 q10 8 18 1" stroke="#171220" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- lengua azul-violeta, marca del chow chow -->
+          <path d="M241 150 q7 4 14 0 q1 12 -7 13 q-8 -1 -7 -13 z" fill="#4b3670"/>
+          <path d="M244 154 q4 2 8 0 q0 7 -4 8 q-4 -1 -4 -8 z" fill="#5e4489" opacity=".8"/>
+          <!-- bigotes -->
+          <g stroke="#6b5a78" stroke-width="1.6" opacity=".55" stroke-linecap="round">
+            <path d="M224 136 l-14 -4"/><path d="M224 142 l-14 2"/>
+            <path d="M272 134 l14 -4"/><path d="M272 140 l14 2"/>
+          </g>
+          <ellipse cx="214" cy="132" rx="9" ry="6" fill="#e07ba6" opacity=".22"/>
+          <ellipse cx="282" cy="130" rx="9" ry="6" fill="#e07ba6" opacity=".22"/>
+          </g>
+        </svg>
+        <div class="name-tag">Chawu 🐶</div>
+      </div>
 
       <div class="ground"></div>
     </div>
 
-    <div class="tap">Toca la pantalla para soltar “suerte que la vas a necesitar” ✨</div>
+    <div class="tap">Toca la pantalla para soltar corazones ✨</div>
     <div class="heart-burst" id="hearts"></div>
   </div>
 
   <script>
+    /* ---- corazones al tocar ---- */
     const hearts = document.getElementById('hearts');
     function createHeart(x, y){
       const heart = document.createElement('div');
       heart.className = 'heart';
-      const icons = ['💗','💖','🌷','✨','💕'];
+      const icons = ['💗','💖','🎂','✨','💕','🤍'];
       heart.textContent = icons[Math.floor(Math.random()*icons.length)];
       heart.style.left = x + 'px';
       heart.style.top = y + 'px';
       hearts.appendChild(heart);
       setTimeout(() => heart.remove(), 3200);
     }
-    document.addEventListener('click', (e) => {
+    function burst(x, y){
       for(let i=0;i<10;i++){
-        setTimeout(() => createHeart(
-          e.clientX + (Math.random()*80 - 40),
-          e.clientY + (Math.random()*50 - 20)
-        ), i*90);
+        setTimeout(() => createHeart(x + (Math.random()*80 - 40), y + (Math.random()*50 - 20)), i*90);
       }
-    });
+    }
+    document.addEventListener('click', (e) => burst(e.clientX, e.clientY));
     document.addEventListener('touchstart', (e) => {
       const t = e.touches[0];
-      for(let i=0;i<10;i++){
-        setTimeout(() => createHeart(
-          t.clientX + (Math.random()*80 - 40),
-          t.clientY + (Math.random()*50 - 20)
-        ), i*90);
-      }
+      burst(t.clientX, t.clientY);
     }, {passive:true});
+
+    /* ---- Chawu ladra y suelta el mensaje ---- */
+    const lineas = [
+      "Feliz cumpleaños, Valen 🎂🤍",
+      "18 vueltas al sol. Hoy se cierra una etapa y empieza otra que va a estar increíble ✨",
+      "Te amo. Y te lo digo en serio: eres la persona que me devolvió las ganas de ser feliz y de volver a creer en el amor 💗",
+      "Me haces sonreír todos los días, y cuando ando mal siempre resulta que ahí estás 🥺",
+      "Incluso cuando el que la toma mal soy yo, tú te sigues preocupando por mí. Eso no se me olvida 🤍",
+      "Estoy muy orgulloso de ti. Quiero quedarme mucho tiempo a tu lado para verte crecer y convertirte en la mujer increíble que ya estás siendo 🌷",
+      "Conocerte ha sido, sin exagerar, lo mejor de mi año. Gracias por todo lo que has hecho por mí 🙏",
+      "Y bueno... ya eres legal, ya no me puedes denunciar 😂",
+      "Hoy no te toca hacer nada más que disfrutar. Que tengas un día precioso 🎈",
+      "No sé si cuando leas esto ya estemos juntos, pero aquí estoy yo. Quiero hacerte la persona más feliz del mundo mundial 💘"
+    ];
+    const btn = document.getElementById('barkBtn');
+    const dogWrap = document.getElementById('dogWrap');
+    const speech = document.getElementById('speech');
+    const speechText = document.getElementById('speechText');
+    const speechCue = document.getElementById('speechCue');
+    let i = -1;
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      burst(e.clientX, e.clientY);
+
+      dogWrap.classList.remove('barking');
+      void dogWrap.offsetWidth;
+      dogWrap.classList.add('barking');
+      setTimeout(() => dogWrap.classList.remove('barking'), 850);
+
+      i++;
+      const fin = i >= lineas.length;
+      if (fin) i = 0;
+
+      setTimeout(() => {
+        speechText.textContent = lineas[i];
+        speechCue.textContent = (i === lineas.length - 1)
+          ? 'si tocas otra vez, te lo repite 🐾'
+          : 'sigue tocando 🐾';
+        speech.classList.remove('pop');
+        void speech.offsetWidth;
+        speech.classList.add('pop');
+        btn.textContent = (i === lineas.length - 1) ? 'otra vez 🐾' : 'que siga ladrando 🐾';
+      }, 180);
+    });
   </script>
 </body>
 </html>
