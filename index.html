@@ -81,6 +81,7 @@
     }
 
     .message{
+      position:relative;
       flex:0 0 auto;
       text-align:center;
       z-index:7;
@@ -413,7 +414,7 @@
     .thought{
       position:relative;
       width:min(440px, 100%);
-      min-height:148px;
+      min-height:126px;
       display:flex;
       flex-direction:column;
       justify-content:center;
@@ -481,6 +482,75 @@
       z-index:5;
     }
 
+
+    /* ---------------- HUELLITAS DE PROGRESO ---------------- */
+    .paws{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:4px;
+      margin-top:10px;
+      line-height:1;
+    }
+    .paw{
+      font-size:12px;
+      line-height:1;
+      opacity:.2;
+      filter:grayscale(1);
+      transition:opacity .3s ease, filter .3s ease, transform .3s ease;
+    }
+    .paw.on{ opacity:1; filter:none; transform:scale(1.14); }
+
+    /* ---------------- BOTON DE SONIDO ---------------- */
+    .snd{
+      position:absolute;
+      top:10px; right:12px;
+      appearance:none;
+      border:none;
+      cursor:pointer;
+      width:32px; height:32px;
+      border-radius:999px;
+      font-size:14px;
+      line-height:1;
+      background:rgba(255,255,255,.75);
+      box-shadow:0 4px 10px rgba(166,31,98,.14);
+      transition:transform .12s ease;
+    }
+    .snd:active{ transform:scale(.92); }
+
+    /* ---------------- FINAL ---------------- */
+    .thought.final{
+      background:linear-gradient(180deg,#fffdf5,#fff3f9);
+      border-color:rgba(214,150,66,.4);
+      box-shadow:0 14px 34px rgba(166,31,98,.2), 0 0 0 4px rgba(255,216,146,.4);
+    }
+    .thought.final:before,
+    .thought.final:after{
+      background:#fff8ef;
+      border-color:rgba(214,150,66,.4);
+    }
+    .dog-wrap.feliz .dog{ animation: felizbob 1.15s ease-in-out infinite; }
+    @keyframes felizbob{
+      0%,100%{transform:translateY(0) rotate(-2.5deg)}
+      50%{transform:translateY(-10px) rotate(2.5deg)}
+    }
+
+    .petalos{position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:19;}
+    .petalo{
+      position:absolute;
+      top:-32px;
+      width:13px; height:21px;
+      border-radius:60% 40% 55% 45% / 72% 72% 28% 28%;
+      opacity:0;
+      box-shadow:0 2px 6px rgba(158,39,97,.16);
+      animation:caer linear forwards;
+    }
+    @keyframes caer{
+      0%{transform:translate(0,-32px) rotate(0deg); opacity:0;}
+      12%{opacity:.95;}
+      100%{transform:translate(var(--dx), 106vh) rotate(var(--gir)); opacity:.15;}
+    }
+
     .heart-burst{position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:20;}
     .heart{
       position:absolute;
@@ -497,12 +567,14 @@
 
     @media (max-width: 720px){
       .wrap{ padding:14px 10px 12px; gap:10px; }
-      .message{ padding:13px 14px 14px; border-radius:22px; }
+      .message{ padding:13px 30px 14px 14px; border-radius:22px; }
+      .paw{ font-size:11px; }
+      .snd{ width:28px; height:28px; top:8px; right:8px; font-size:13px; }
       .music-btn{ padding:11px 15px; font-size:.92rem; }
       .cloudzone{ padding-bottom:20px; }
       .thought{
         width:100%;
-        min-height:132px;
+        min-height:112px;
         padding:13px 15px;
         border-radius:24px;
         font-size:clamp(.98rem, 4vw, 1.1rem);
@@ -523,7 +595,7 @@
 
     @media (max-width: 720px) and (max-height: 700px){
       .flowers{ height:min(26vh, 210px); }
-      .thought{ min-height:118px; }
+      .thought{ min-height:104px; }
       .scene{ min-height:180px; }
     }
 
@@ -539,6 +611,7 @@
     </div>
 
     <div class="message">
+      <button class="snd" id="sndBtn" type="button" aria-label="Activar o silenciar el ladrido">🔊</button>
       <h1>Feliz cumpleaños, Valen&nbsp;💗</h1>
       <p class="lead">18 vueltas al sol 🎂 Chawu tiene algo que decirte: hazlo ladrar 🐾</p>
 
@@ -554,6 +627,7 @@
       <div class="thought" id="speech" aria-live="polite">
         <span id="speechText">hazme ladrar y te lo digo 🐾</span>
         <span class="cue" id="speechCue">toca el botón rosado</span>
+        <div class="paws" id="paws" aria-hidden="true"></div>
       </div>
     </div>
 
@@ -713,6 +787,7 @@
     </div>
 
     <div class="tap">Toca la pantalla para soltar corazones ✨</div>
+    <div class="petalos" id="petalos"></div>
     <div class="heart-burst" id="hearts"></div>
   </div>
 
@@ -759,15 +834,103 @@
       "Feliz cumpleaños, preciosa. Espero que hoy pueda aportarte aunque sea un poquito de toda la felicidad que quiero que tengas a lo largo de toda tu vida 🎂"
     ];
     const btn = document.getElementById('barkBtn');
+    const sndBtn = document.getElementById('sndBtn');
     const dogWrap = document.getElementById('dogWrap');
     const speech = document.getElementById('speech');
     const speechText = document.getElementById('speechText');
     const speechCue = document.getElementById('speechCue');
+    const pawsBox = document.getElementById('paws');
+    const petalos = document.getElementById('petalos');
     let i = -1;
+    let sonido = true;
+
+    /* ---- huellitas de progreso ---- */
+    lineas.forEach(() => {
+      const s = document.createElement('span');
+      s.className = 'paw';
+      s.textContent = '\uD83D\uDC3E';
+      pawsBox.appendChild(s);
+    });
+    const paws = Array.from(pawsBox.children);
+
+    /* ---- ladrido sintetizado ---- */
+    let actx = null;
+    function ladrido(){
+      try{
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if(!AC) return;
+        actx = actx || new AC();
+        if(actx.state === 'suspended') actx.resume();
+        const t = actx.currentTime;
+
+        const g = actx.createGain();
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.exponentialRampToValueAtTime(0.5, t + 0.014);
+        g.gain.exponentialRampToValueAtTime(0.16, t + 0.09);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + 0.27);
+        g.connect(actx.destination);
+
+        const bp = actx.createBiquadFilter();
+        bp.type = 'bandpass';
+        bp.Q.value = 1.7;
+        bp.frequency.setValueAtTime(850, t);
+        bp.frequency.exponentialRampToValueAtTime(1750, t + 0.05);
+        bp.frequency.exponentialRampToValueAtTime(480, t + 0.2);
+        bp.connect(g);
+
+        const osc = actx.createOscillator();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(430, t);
+        osc.frequency.exponentialRampToValueAtTime(155, t + 0.09);
+        osc.frequency.exponentialRampToValueAtTime(95, t + 0.24);
+        osc.connect(bp);
+
+        const len = Math.floor(actx.sampleRate * 0.26);
+        const buf = actx.createBuffer(1, len, actx.sampleRate);
+        const data = buf.getChannelData(0);
+        for(let k = 0; k < len; k++) data[k] = (Math.random() * 2 - 1) * (1 - k / len);
+        const noise = actx.createBufferSource();
+        noise.buffer = buf;
+        const hp = actx.createBiquadFilter();
+        hp.type = 'highpass';
+        hp.frequency.value = 850;
+        const ng = actx.createGain();
+        ng.gain.value = 0.11;
+        noise.connect(hp); hp.connect(ng); ng.connect(g);
+
+        osc.start(t); osc.stop(t + 0.3);
+        noise.start(t); noise.stop(t + 0.3);
+      }catch(e){}
+    }
+
+    sndBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      sonido = !sonido;
+      sndBtn.textContent = sonido ? '\uD83D\uDD0A' : '\uD83D\uDD07';
+      if(sonido) ladrido();
+    });
+
+    /* ---- lluvia de petalos del final ---- */
+    function lluviaDePetalos(){
+      const colores = ['#ff8ec0', '#ffc23d', '#ffffff', '#ff5d99', '#ffe08a', '#fff2c2'];
+      for(let k = 0; k < 26; k++){
+        const p = document.createElement('div');
+        p.className = 'petalo';
+        p.style.left = (Math.random() * 100) + 'vw';
+        p.style.background = colores[k % colores.length];
+        p.style.animationDelay = (Math.random() * 1.8) + 's';
+        p.style.animationDuration = (3.8 + Math.random() * 2.4) + 's';
+        p.style.setProperty('--gir', (Math.random() * 760 - 380) + 'deg');
+        p.style.setProperty('--dx', (Math.random() * 120 - 60) + 'px');
+        petalos.appendChild(p);
+        setTimeout(() => p.remove(), 8000);
+      }
+    }
 
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       burst(e.clientX, e.clientY);
+      if(sonido) ladrido();
 
       dogWrap.classList.remove('barking');
       void dogWrap.offsetWidth;
@@ -775,18 +938,39 @@
       setTimeout(() => dogWrap.classList.remove('barking'), 850);
 
       i++;
-      const fin = i >= lineas.length;
-      if (fin) i = 0;
+      if(i >= lineas.length) i = 0;
+      const ultima = (i === lineas.length - 1);
+
+      if(i === 0){
+        paws.forEach(p => p.classList.remove('on'));
+        speech.classList.remove('final');
+        dogWrap.classList.remove('feliz');
+      }
 
       setTimeout(() => {
         speechText.textContent = lineas[i];
-        speechCue.textContent = (i === lineas.length - 1)
-          ? 'si tocas otra vez, te lo repite 🐾'
-          : 'sigue tocando 🐾';
+        paws.forEach((p, k) => p.classList.toggle('on', k <= i));
+        speech.classList.toggle('final', ultima);
         speech.classList.remove('pop');
         void speech.offsetWidth;
         speech.classList.add('pop');
-        btn.textContent = (i === lineas.length - 1) ? 'otra vez 🐾' : 'que siga ladrando 🐾';
+
+        if(ultima){
+          speechCue.textContent = 'con todo mi cari\u00f1o \uD83D\uDC8C';
+          btn.textContent = 'leerlo otra vez \uD83D\uDC8C';
+          dogWrap.classList.add('feliz');
+          lluviaDePetalos();
+          const r = dogWrap.getBoundingClientRect();
+          for(let k = 0; k < 8; k++){
+            setTimeout(() => createHeart(
+              r.left + r.width * 0.3 + Math.random() * 50,
+              r.top + 16 + Math.random() * 34
+            ), k * 150);
+          }
+        } else {
+          speechCue.textContent = (i + 1) + ' de ' + lineas.length;
+          btn.textContent = 'que siga ladrando \uD83D\uDC3E';
+        }
       }, 180);
     });
   </script>
