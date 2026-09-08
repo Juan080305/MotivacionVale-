@@ -529,6 +529,9 @@
       background:#fff8ef;
       border-color:rgba(214,150,66,.4);
     }
+    .dog-sit{ display:none; }
+    .dog-wrap.sentado .dog-stand{ display:none; }
+    .dog-wrap.sentado .dog-sit{ display:block; }
     .dog-wrap.feliz .dog{ animation: felizbob 1.15s ease-in-out infinite; }
     @keyframes felizbob{
       0%,100%{transform:translateY(0) rotate(-2.5deg)}
@@ -667,7 +670,7 @@
 
       <div class="dog-wrap" id="dogWrap">
         <span class="woof">¡guau!</span>
-        <svg class="dog" viewBox="0 0 360 280" role="img" aria-label="Chawu, el chow chow negro">
+        <svg class="dog dog-stand" viewBox="0 0 360 280" role="img" aria-label="Chawu, el chow chow negro">
           <g transform="translate(360,0) scale(-1,1)">
           <defs>
             <linearGradient id="furA" x1="0" y1="0" x2="0" y2="1">
@@ -780,6 +783,104 @@
           <ellipse cx="282" cy="130" rx="9" ry="6" fill="#e07ba6" opacity=".22"/>
           </g>
         </svg>
+        <svg class="dog dog-sit" viewBox="0 0 360 280" role="img" aria-label="Chawu sentado">
+          <defs>
+            <linearGradient id="sfurA" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#443a4a"/><stop offset="55%" stop-color="#302834"/><stop offset="100%" stop-color="#201a25"/>
+            </linearGradient>
+            <linearGradient id="sfurB" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#564860"/><stop offset="58%" stop-color="#372f40"/><stop offset="100%" stop-color="#241e2a"/>
+            </linearGradient>
+            <linearGradient id="sfurC" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#4b3f55"/><stop offset="100%" stop-color="#2a2331"/>
+            </linearGradient>
+            <linearGradient id="srust" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#b47c4d"/><stop offset="100%" stop-color="#77462a"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(360,0) scale(-1,1)">
+
+          <!-- cola en pluma, enroscada al costado -->
+          <g fill="#2c2532">
+            <circle cx="112" cy="182" r="17"/><circle cx="93" cy="168" r="18"/>
+            <circle cx="82" cy="147" r="18"/><circle cx="86" cy="126" r="17"/>
+            <circle cx="101" cy="112" r="16"/><circle cx="122" cy="107" r="15"/>
+            <circle cx="141" cy="112" r="13"/><circle cx="154" cy="124" r="11"/>
+          </g>
+          <path d="M110 180 Q84 164 84 140 Q86 118 110 110 Q138 105 153 124"
+                stroke="#4c4058" stroke-width="15" fill="none" stroke-linecap="round" opacity=".45"/>
+          <path d="M92 134 Q97 120 112 114" stroke="rgba(255,255,255,.16)" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+          <!-- grupa sentada -->
+          <path d="M 191.9 208.8 Q 195.4 225.3 177.9 230.8 Q 173.2 247.1 154.9 245.1 Q 142.9 257.9 127.3 248.8 Q 110.4 255.6 100.6 241.3 Q 82.1 240.8 80.2 224.1 Q 63.8 216.3 70.0 200.5 Q 58.9 187.0 72.1 175.2 Q 68.6 158.7 86.1 153.2 Q 90.8 136.9 109.1 138.9 Q 121.1 126.1 136.7 135.2 Q 153.6 128.4 163.4 142.7 Q 181.9 143.2 183.8 159.9 Q 200.2 167.7 194.0 183.5 Q 205.1 197.0 191.9 208.8 Z" fill="url(#sfurC)"/>
+          <ellipse cx="132" cy="186" rx="48" ry="34" fill="#4d4159" opacity=".3"/>
+          <ellipse cx="176" cy="244" rx="23" ry="11" fill="#1e1824"/>
+          <path d="M167 242 v-7 M176 242 v-8 M185 242 v-7" stroke="#463b51" stroke-width="2.4" stroke-linecap="round"/>
+
+          <!-- pecho / torso vertical -->
+          <path d="M 267.0 204.0 Q 270.8 219.5 258.3 227.5 Q 255.3 243.3 240.8 243.8 Q 231.6 256.2 218.6 249.2 Q 205.3 255.4 196.7 242.4 Q 182.3 240.9 180.1 224.9 Q 168.0 216.2 172.7 200.9 Q 165.6 186.8 176.1 175.7 Q 175.7 159.5 189.6 155.2 Q 195.9 140.6 210.0 144.0 Q 221.6 134.4 232.7 144.7 Q 247.0 142.3 252.5 157.2 Q 266.2 162.5 264.9 178.6 Q 274.8 190.4 267.0 204.0 Z" fill="url(#sfurA)"/>
+          <ellipse cx="220" cy="188" rx="34" ry="34" fill="#4a3f55" opacity=".28"/>
+
+          <!-- patas delanteras rectas -->
+          <rect x="196" y="198" width="29" height="52" rx="14" fill="#2b2431"/>
+          <rect x="236" y="196" width="29" height="54" rx="14" fill="#342c3c"/>
+          <ellipse cx="210" cy="246" rx="19" ry="10" fill="#1e1824"/>
+          <ellipse cx="250" cy="246" rx="19" ry="10" fill="#241d2b"/>
+          <path d="M203 244 v-7 M210 244 v-8 M217 244 v-7" stroke="#4a3f54" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M243 244 v-7 M250 244 v-8 M257 244 v-7" stroke="#584a67" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M204 214 q5 18 3 28" stroke="#8a5a38" stroke-width="7" fill="none" stroke-linecap="round" opacity=".32"/>
+          <path d="M248 212 q5 18 3 30" stroke="#8a5a38" stroke-width="7" fill="none" stroke-linecap="round" opacity=".28"/>
+
+          <!-- collar -->
+          <path d="M212 156 Q244 176 276 154" stroke="#f1619b" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <circle cx="245" cy="176" r="8.5" fill="#ffd76c"/>
+          <path d="M245 179.6 l-3.6-3.9 a2.4 2.4 0 0 1 3.6-3 a2.4 2.4 0 0 1 3.6 3 z" fill="#e0913a"/>
+
+          <!-- melena de leon -->
+          <path d="M 323.3 87.5 Q 335.8 98.6 323.1 109.5 Q 331.4 123.7 315.8 130.4 Q 319.1 146.3 302.0 148.1 Q 299.9 164.2 283.2 160.9 Q 275.9 175.6 261.1 167.5 Q 249.4 179.4 237.9 167.4 Q 222.9 175.2 215.9 160.4 Q 199.1 163.5 197.2 147.4 Q 180.2 145.4 183.7 129.5 Q 168.2 122.6 176.7 108.5 Q 164.2 97.4 176.9 86.5 Q 168.6 72.3 184.2 65.6 Q 180.9 49.7 198.0 47.9 Q 200.1 31.8 216.8 35.1 Q 224.1 20.4 238.9 28.5 Q 250.6 16.6 262.1 28.6 Q 277.1 20.8 284.1 35.6 Q 300.9 32.5 302.8 48.6 Q 319.8 50.6 316.3 66.5 Q 331.8 73.4 323.3 87.5 Z" fill="url(#sfurB)"/>
+          <path d="M310 94 Q325 120 304 148 Q293 161 278 167 Q303 140 300 110 Z" fill="url(#srust)" opacity=".4"/>
+          <path d="M190 98 Q175 122 192 150 Q201 163 214 168 Q193 142 200 116 Z" fill="url(#srust)" opacity=".3"/>
+          <g stroke="#5d4e6b" stroke-width="2.6" fill="none" stroke-linecap="round" opacity=".5">
+            <path d="M206 64 q-8 12 -6 24"/><path d="M298 60 q8 12 6 24"/>
+            <path d="M196 116 q-8 12 -4 24"/><path d="M310 114 q8 12 4 24"/>
+          </g>
+
+          <!-- orejas -->
+          <path d="M200 50 Q192 14 224 18 Q234 32 230 56 Z" fill="#29222f"/>
+          <path d="M209 46 Q205 26 220 28 Q225 38 222 50 Z" fill="url(#srust)" opacity=".8"/>
+          <path d="M274 46 Q284 10 312 28 Q315 46 300 62 Z" fill="#29222f"/>
+          <path d="M284 44 Q291 26 304 36 Q305 48 296 58 Z" fill="url(#srust)" opacity=".75"/>
+
+          <!-- cara -->
+          <ellipse cx="252" cy="100" rx="50" ry="44" fill="#2c2532"/>
+          <ellipse cx="252" cy="108" rx="42" ry="35" fill="#3b3243" opacity=".5"/>
+          <g stroke="#171220" stroke-width="3" fill="none" stroke-linecap="round" opacity=".5">
+            <path d="M236 76 q16 -8 32 0"/>
+            <path d="M240 67 q12 -6 24 0"/>
+          </g>
+          <ellipse cx="230" cy="87" rx="10" ry="6" fill="#9a6742" opacity=".6" transform="rotate(-14 230 87)"/>
+          <ellipse cx="274" cy="85" rx="10" ry="6" fill="#9a6742" opacity=".55" transform="rotate(12 274 85)"/>
+          <path d="M220 100 q9 -9 19 -1 q-9 9 -19 1 z" fill="#0e0b12"/>
+          <path d="M264 98 q10 -8 19 1 q-10 8 -19 -1 z" fill="#0e0b12"/>
+          <circle cx="229" cy="96.5" r="2.4" fill="#fff" opacity=".9"/>
+          <circle cx="274" cy="95" r="2.4" fill="#fff" opacity=".9"/>
+          <ellipse cx="252" cy="126" rx="28" ry="20" fill="#463b4d"/>
+          <ellipse cx="252" cy="132" rx="22" ry="13" fill="#3a3040" opacity=".7"/>
+          <path d="M252 121 m-12 -1 a12 8.5 0 0 1 24 0 a12 9.5 0 0 1 -12 9 a12 9.5 0 0 1 -12 -9 z" fill="#100c15"/>
+          <path d="M247 117 q5 -3.5 10 0" stroke="#4e4359" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <path d="M252 130 v5" stroke="#171220" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M252 135 q-10 8 -18 1" stroke="#171220" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M252 135 q10 8 18 1" stroke="#171220" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M245 138 q7 4 14 0 q1 12 -7 13 q-8 -1 -7 -13 z" fill="#4b3670"/>
+          <path d="M248 142 q4 2 8 0 q0 7 -4 8 q-4 -1 -4 -8 z" fill="#5e4489" opacity=".8"/>
+          <g stroke="#6b5a78" stroke-width="1.6" opacity=".5" stroke-linecap="round">
+            <path d="M228 124 l-14 -4"/><path d="M228 130 l-14 2"/>
+            <path d="M276 122 l14 -4"/><path d="M276 128 l14 2"/>
+          </g>
+          <ellipse cx="218" cy="120" rx="9" ry="6" fill="#e07ba6" opacity=".22"/>
+          <ellipse cx="286" cy="118" rx="9" ry="6" fill="#e07ba6" opacity=".22"/>
+          </g>
+        </svg>
         <div class="name-tag">Chawu 🐶</div>
       </div>
 
@@ -853,53 +954,24 @@
     });
     const paws = Array.from(pawsBox.children);
 
-    /* ---- ladrido sintetizado ---- */
-    let actx = null;
+    /* ---- ladrido de Chawu (audio real, funciona en movil) ---- */
+    const pool = [];
+    for(let k = 0; k < 3; k++){
+      const a = new Audio('ladrido.wav');
+      a.preload = 'auto';
+      a.volume = 0.85;
+      pool.push(a);
+    }
+    let pi = 0;
     function ladrido(){
+      if(!sonido) return;
+      const a = pool[pi];
+      pi = (pi + 1) % pool.length;
       try{
-        const AC = window.AudioContext || window.webkitAudioContext;
-        if(!AC) return;
-        actx = actx || new AC();
-        if(actx.state === 'suspended') actx.resume();
-        const t = actx.currentTime;
-
-        const g = actx.createGain();
-        g.gain.setValueAtTime(0.0001, t);
-        g.gain.exponentialRampToValueAtTime(0.5, t + 0.014);
-        g.gain.exponentialRampToValueAtTime(0.16, t + 0.09);
-        g.gain.exponentialRampToValueAtTime(0.0001, t + 0.27);
-        g.connect(actx.destination);
-
-        const bp = actx.createBiquadFilter();
-        bp.type = 'bandpass';
-        bp.Q.value = 1.7;
-        bp.frequency.setValueAtTime(850, t);
-        bp.frequency.exponentialRampToValueAtTime(1750, t + 0.05);
-        bp.frequency.exponentialRampToValueAtTime(480, t + 0.2);
-        bp.connect(g);
-
-        const osc = actx.createOscillator();
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(430, t);
-        osc.frequency.exponentialRampToValueAtTime(155, t + 0.09);
-        osc.frequency.exponentialRampToValueAtTime(95, t + 0.24);
-        osc.connect(bp);
-
-        const len = Math.floor(actx.sampleRate * 0.26);
-        const buf = actx.createBuffer(1, len, actx.sampleRate);
-        const data = buf.getChannelData(0);
-        for(let k = 0; k < len; k++) data[k] = (Math.random() * 2 - 1) * (1 - k / len);
-        const noise = actx.createBufferSource();
-        noise.buffer = buf;
-        const hp = actx.createBiquadFilter();
-        hp.type = 'highpass';
-        hp.frequency.value = 850;
-        const ng = actx.createGain();
-        ng.gain.value = 0.11;
-        noise.connect(hp); hp.connect(ng); ng.connect(g);
-
-        osc.start(t); osc.stop(t + 0.3);
-        noise.start(t); noise.stop(t + 0.3);
+        a.pause();
+        a.currentTime = 0;
+        const pr = a.play();
+        if(pr && pr.catch) pr.catch(function(){});
       }catch(e){}
     }
 
@@ -907,7 +979,7 @@
       e.stopPropagation();
       sonido = !sonido;
       sndBtn.textContent = sonido ? '\uD83D\uDD0A' : '\uD83D\uDD07';
-      if(sonido) ladrido();
+      ladrido();
     });
 
     /* ---- lluvia de petalos del final ---- */
@@ -930,7 +1002,7 @@
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       burst(e.clientX, e.clientY);
-      if(sonido) ladrido();
+      ladrido();
 
       dogWrap.classList.remove('barking');
       void dogWrap.offsetWidth;
@@ -945,6 +1017,7 @@
         paws.forEach(p => p.classList.remove('on'));
         speech.classList.remove('final');
         dogWrap.classList.remove('feliz');
+        dogWrap.classList.remove('sentado');
       }
 
       setTimeout(() => {
@@ -958,6 +1031,7 @@
         if(ultima){
           speechCue.textContent = 'con todo mi cari\u00f1o \uD83D\uDC8C';
           btn.textContent = 'leerlo otra vez \uD83D\uDC8C';
+          dogWrap.classList.add('sentado');
           dogWrap.classList.add('feliz');
           lluviaDePetalos();
           const r = dogWrap.getBoundingClientRect();
@@ -968,7 +1042,7 @@
             ), k * 150);
           }
         } else {
-          speechCue.textContent = (i + 1) + ' de ' + lineas.length;
+          speechCue.textContent = 'sigue tocando \uD83D\uDC3E';
           btn.textContent = 'que siga ladrando \uD83D\uDC3E';
         }
       }, 180);
